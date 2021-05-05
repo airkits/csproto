@@ -1,0 +1,52 @@
+syntax = "proto3";
+package c2s;
+option go_package = "github.com/airkits/csproto/c2s;c2s";
+// client  <-> server  10000 - 19999
+enum MessageCmd //枚举消息类型
+{
+  NULL = 0;
+  Login = 1;
+  FRAME = 2;
+  FRAMES = 3;
+}
+
+enum ErrorCode {
+  OK = 0;
+}
+
+message Result {
+  int32 code=1;
+  string msg=2;
+}
+
+message LoginReq{
+  string uid = 1;
+}
+
+
+message LoginResp {
+  Result result = 1;
+  string uid = 2;
+  int32 fid = 3;
+}
+message Cmd {
+  int32 cmd = 1;
+  int32 opt = 2;
+}
+message Frame {
+  int32 fid= 1;
+  string uid = 2;
+  repeated Cmd cmds = 3;
+}
+message FrameReq {
+  repeated Frame frame = 1;
+}
+message FrameResp {
+  Result result = 1;
+  string uid = 2;
+  int32 fid = 3;
+}
+
+message FramesNotify {
+  repeated Frame frame = 1;
+}
