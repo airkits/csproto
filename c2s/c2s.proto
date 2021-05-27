@@ -5,9 +5,12 @@ option go_package = "github.com/airkits/csproto/c2s;c2s";
 enum MessageCmd //枚举消息类型
 {
   NULL = 0;
-  Login = 1;
+  JOIN_ROOM = 1;
   FRAME = 2;
   FRAMES = 3;
+  LEAVE_ROOM = 4;
+  HEARTBEAT = 5;
+  START_GAME = 6;
 }
 
 enum ErrorCode {
@@ -19,24 +22,30 @@ message Result {
   string msg=2;
 }
 
-message LoginReq{
+message JoinRoomReq{
   string uid = 1;
 }
 
 
-message LoginResp {
+message JoinRoomResp {
   Result result = 1;
   string uid = 2;
-  int32 fid = 3;
+  int32 index = 3;//分配的内房间索引
+  int32 seed = 4; //种子
+  int32 frameIndex = 5; //当前frame
+  repeated Frame frame = 6;
+
 }
 message Cmd {
   int32 cmd = 1;
   int32 opt = 2;
+  string data = 3;
 }
 message Frame {
-  int32 fid= 1;
+  int32 frameIndex= 1;
   string uid = 2;
-  repeated Cmd cmds = 3;
+  int32 index = 3;//分配的房间内索引
+  repeated Cmd cmds = 4;
 }
 message FrameReq {
   repeated Frame frame = 1;
@@ -44,9 +53,10 @@ message FrameReq {
 message FrameResp {
   Result result = 1;
   string uid = 2;
-  int32 fid = 3;
+  int32 frameIndex = 3;
 }
 
 message FramesNotify {
   repeated Frame frame = 1;
 }
+
