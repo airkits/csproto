@@ -36,6 +36,7 @@ message JoinRoomResp {
   repeated Frame frame = 6;
 
 }
+
 message Cmd {
   int32 cmd = 1;
   int32 opt = 2;
