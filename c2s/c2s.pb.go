@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.26.0
 // 	protoc        v3.17.1
-// source: c2s/c2s.proto
+// source: protobuf/protofiles/c2s.proto
 
 package c2s
 
@@ -66,11 +66,11 @@ func (x MessageCmd) String() string {
 }
 
 func (MessageCmd) Descriptor() protoreflect.EnumDescriptor {
-	return file_c2s_c2s_proto_enumTypes[0].Descriptor()
+	return file_protobuf_protofiles_c2s_proto_enumTypes[0].Descriptor()
 }
 
 func (MessageCmd) Type() protoreflect.EnumType {
-	return &file_c2s_c2s_proto_enumTypes[0]
+	return &file_protobuf_protofiles_c2s_proto_enumTypes[0]
 }
 
 func (x MessageCmd) Number() protoreflect.EnumNumber {
@@ -79,7 +79,7 @@ func (x MessageCmd) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use MessageCmd.Descriptor instead.
 func (MessageCmd) EnumDescriptor() ([]byte, []int) {
-	return file_c2s_c2s_proto_rawDescGZIP(), []int{0}
+	return file_protobuf_protofiles_c2s_proto_rawDescGZIP(), []int{0}
 }
 
 type ErrorCode int32
@@ -109,11 +109,11 @@ func (x ErrorCode) String() string {
 }
 
 func (ErrorCode) Descriptor() protoreflect.EnumDescriptor {
-	return file_c2s_c2s_proto_enumTypes[1].Descriptor()
+	return file_protobuf_protofiles_c2s_proto_enumTypes[1].Descriptor()
 }
 
 func (ErrorCode) Type() protoreflect.EnumType {
-	return &file_c2s_c2s_proto_enumTypes[1]
+	return &file_protobuf_protofiles_c2s_proto_enumTypes[1]
 }
 
 func (x ErrorCode) Number() protoreflect.EnumNumber {
@@ -122,7 +122,7 @@ func (x ErrorCode) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ErrorCode.Descriptor instead.
 func (ErrorCode) EnumDescriptor() ([]byte, []int) {
-	return file_c2s_c2s_proto_rawDescGZIP(), []int{1}
+	return file_protobuf_protofiles_c2s_proto_rawDescGZIP(), []int{1}
 }
 
 type Result struct {
@@ -137,7 +137,7 @@ type Result struct {
 func (x *Result) Reset() {
 	*x = Result{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_c2s_c2s_proto_msgTypes[0]
+		mi := &file_protobuf_protofiles_c2s_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -150,7 +150,7 @@ func (x *Result) String() string {
 func (*Result) ProtoMessage() {}
 
 func (x *Result) ProtoReflect() protoreflect.Message {
-	mi := &file_c2s_c2s_proto_msgTypes[0]
+	mi := &file_protobuf_protofiles_c2s_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -163,7 +163,7 @@ func (x *Result) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Result.ProtoReflect.Descriptor instead.
 func (*Result) Descriptor() ([]byte, []int) {
-	return file_c2s_c2s_proto_rawDescGZIP(), []int{0}
+	return file_protobuf_protofiles_c2s_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Result) GetCode() int32 {
@@ -191,7 +191,7 @@ type JoinRoomReq struct {
 func (x *JoinRoomReq) Reset() {
 	*x = JoinRoomReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_c2s_c2s_proto_msgTypes[1]
+		mi := &file_protobuf_protofiles_c2s_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -204,7 +204,7 @@ func (x *JoinRoomReq) String() string {
 func (*JoinRoomReq) ProtoMessage() {}
 
 func (x *JoinRoomReq) ProtoReflect() protoreflect.Message {
-	mi := &file_c2s_c2s_proto_msgTypes[1]
+	mi := &file_protobuf_protofiles_c2s_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -217,7 +217,7 @@ func (x *JoinRoomReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use JoinRoomReq.ProtoReflect.Descriptor instead.
 func (*JoinRoomReq) Descriptor() ([]byte, []int) {
-	return file_c2s_c2s_proto_rawDescGZIP(), []int{1}
+	return file_protobuf_protofiles_c2s_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *JoinRoomReq) GetUid() string {
@@ -243,7 +243,7 @@ type JoinRoomResp struct {
 func (x *JoinRoomResp) Reset() {
 	*x = JoinRoomResp{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_c2s_c2s_proto_msgTypes[2]
+		mi := &file_protobuf_protofiles_c2s_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -256,7 +256,7 @@ func (x *JoinRoomResp) String() string {
 func (*JoinRoomResp) ProtoMessage() {}
 
 func (x *JoinRoomResp) ProtoReflect() protoreflect.Message {
-	mi := &file_c2s_c2s_proto_msgTypes[2]
+	mi := &file_protobuf_protofiles_c2s_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -269,7 +269,7 @@ func (x *JoinRoomResp) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use JoinRoomResp.ProtoReflect.Descriptor instead.
 func (*JoinRoomResp) Descriptor() ([]byte, []int) {
-	return file_c2s_c2s_proto_rawDescGZIP(), []int{2}
+	return file_protobuf_protofiles_c2s_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *JoinRoomResp) GetResult() *Result {
@@ -327,7 +327,7 @@ type Cmd struct {
 func (x *Cmd) Reset() {
 	*x = Cmd{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_c2s_c2s_proto_msgTypes[3]
+		mi := &file_protobuf_protofiles_c2s_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -340,7 +340,7 @@ func (x *Cmd) String() string {
 func (*Cmd) ProtoMessage() {}
 
 func (x *Cmd) ProtoReflect() protoreflect.Message {
-	mi := &file_c2s_c2s_proto_msgTypes[3]
+	mi := &file_protobuf_protofiles_c2s_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -353,7 +353,7 @@ func (x *Cmd) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Cmd.ProtoReflect.Descriptor instead.
 func (*Cmd) Descriptor() ([]byte, []int) {
-	return file_c2s_c2s_proto_rawDescGZIP(), []int{3}
+	return file_protobuf_protofiles_c2s_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *Cmd) GetCmd() int32 {
@@ -391,7 +391,7 @@ type Frame struct {
 func (x *Frame) Reset() {
 	*x = Frame{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_c2s_c2s_proto_msgTypes[4]
+		mi := &file_protobuf_protofiles_c2s_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -404,7 +404,7 @@ func (x *Frame) String() string {
 func (*Frame) ProtoMessage() {}
 
 func (x *Frame) ProtoReflect() protoreflect.Message {
-	mi := &file_c2s_c2s_proto_msgTypes[4]
+	mi := &file_protobuf_protofiles_c2s_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -417,7 +417,7 @@ func (x *Frame) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Frame.ProtoReflect.Descriptor instead.
 func (*Frame) Descriptor() ([]byte, []int) {
-	return file_c2s_c2s_proto_rawDescGZIP(), []int{4}
+	return file_protobuf_protofiles_c2s_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *Frame) GetFrameIndex() int32 {
@@ -459,7 +459,7 @@ type FrameReq struct {
 func (x *FrameReq) Reset() {
 	*x = FrameReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_c2s_c2s_proto_msgTypes[5]
+		mi := &file_protobuf_protofiles_c2s_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -472,7 +472,7 @@ func (x *FrameReq) String() string {
 func (*FrameReq) ProtoMessage() {}
 
 func (x *FrameReq) ProtoReflect() protoreflect.Message {
-	mi := &file_c2s_c2s_proto_msgTypes[5]
+	mi := &file_protobuf_protofiles_c2s_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -485,7 +485,7 @@ func (x *FrameReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FrameReq.ProtoReflect.Descriptor instead.
 func (*FrameReq) Descriptor() ([]byte, []int) {
-	return file_c2s_c2s_proto_rawDescGZIP(), []int{5}
+	return file_protobuf_protofiles_c2s_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *FrameReq) GetFrame() []*Frame {
@@ -508,7 +508,7 @@ type FrameResp struct {
 func (x *FrameResp) Reset() {
 	*x = FrameResp{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_c2s_c2s_proto_msgTypes[6]
+		mi := &file_protobuf_protofiles_c2s_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -521,7 +521,7 @@ func (x *FrameResp) String() string {
 func (*FrameResp) ProtoMessage() {}
 
 func (x *FrameResp) ProtoReflect() protoreflect.Message {
-	mi := &file_c2s_c2s_proto_msgTypes[6]
+	mi := &file_protobuf_protofiles_c2s_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -534,7 +534,7 @@ func (x *FrameResp) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FrameResp.ProtoReflect.Descriptor instead.
 func (*FrameResp) Descriptor() ([]byte, []int) {
-	return file_c2s_c2s_proto_rawDescGZIP(), []int{6}
+	return file_protobuf_protofiles_c2s_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *FrameResp) GetResult() *Result {
@@ -569,7 +569,7 @@ type FramesNotify struct {
 func (x *FramesNotify) Reset() {
 	*x = FramesNotify{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_c2s_c2s_proto_msgTypes[7]
+		mi := &file_protobuf_protofiles_c2s_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -582,7 +582,7 @@ func (x *FramesNotify) String() string {
 func (*FramesNotify) ProtoMessage() {}
 
 func (x *FramesNotify) ProtoReflect() protoreflect.Message {
-	mi := &file_c2s_c2s_proto_msgTypes[7]
+	mi := &file_protobuf_protofiles_c2s_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -595,7 +595,7 @@ func (x *FramesNotify) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FramesNotify.ProtoReflect.Descriptor instead.
 func (*FramesNotify) Descriptor() ([]byte, []int) {
-	return file_c2s_c2s_proto_rawDescGZIP(), []int{7}
+	return file_protobuf_protofiles_c2s_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *FramesNotify) GetFrame() []*Frame {
@@ -605,10 +605,11 @@ func (x *FramesNotify) GetFrame() []*Frame {
 	return nil
 }
 
-var File_c2s_c2s_proto protoreflect.FileDescriptor
+var File_protobuf_protofiles_c2s_proto protoreflect.FileDescriptor
 
-var file_c2s_c2s_proto_rawDesc = []byte{
-	0x0a, 0x0d, 0x63, 0x32, 0x73, 0x2f, 0x63, 0x32, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12,
+var file_protobuf_protofiles_c2s_proto_rawDesc = []byte{
+	0x0a, 0x1d, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x66, 0x69, 0x6c, 0x65, 0x73, 0x2f, 0x63, 0x32, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12,
 	0x03, 0x63, 0x32, 0x73, 0x22, 0x2e, 0x0a, 0x06, 0x52, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x12, 0x12,
 	0x0a, 0x04, 0x63, 0x6f, 0x64, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x04, 0x63, 0x6f,
 	0x64, 0x65, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x73, 0x67, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
@@ -656,27 +657,25 @@ var file_c2s_c2s_proto_rawDesc = []byte{
 	0x56, 0x45, 0x5f, 0x52, 0x4f, 0x4f, 0x4d, 0x10, 0x04, 0x12, 0x0d, 0x0a, 0x09, 0x48, 0x45, 0x41,
 	0x52, 0x54, 0x42, 0x45, 0x41, 0x54, 0x10, 0x05, 0x12, 0x0e, 0x0a, 0x0a, 0x53, 0x54, 0x41, 0x52,
 	0x54, 0x5f, 0x47, 0x41, 0x4d, 0x45, 0x10, 0x06, 0x2a, 0x13, 0x0a, 0x09, 0x45, 0x72, 0x72, 0x6f,
-	0x72, 0x43, 0x6f, 0x64, 0x65, 0x12, 0x06, 0x0a, 0x02, 0x4f, 0x4b, 0x10, 0x00, 0x42, 0x24, 0x5a,
-	0x22, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x61, 0x69, 0x72, 0x6b,
-	0x69, 0x74, 0x73, 0x2f, 0x63, 0x73, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x63, 0x32, 0x73, 0x3b,
-	0x63, 0x32, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x72, 0x43, 0x6f, 0x64, 0x65, 0x12, 0x06, 0x0a, 0x02, 0x4f, 0x4b, 0x10, 0x00, 0x42, 0x08, 0x5a,
+	0x06, 0x2e, 0x2f, 0x3b, 0x63, 0x32, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_c2s_c2s_proto_rawDescOnce sync.Once
-	file_c2s_c2s_proto_rawDescData = file_c2s_c2s_proto_rawDesc
+	file_protobuf_protofiles_c2s_proto_rawDescOnce sync.Once
+	file_protobuf_protofiles_c2s_proto_rawDescData = file_protobuf_protofiles_c2s_proto_rawDesc
 )
 
-func file_c2s_c2s_proto_rawDescGZIP() []byte {
-	file_c2s_c2s_proto_rawDescOnce.Do(func() {
-		file_c2s_c2s_proto_rawDescData = protoimpl.X.CompressGZIP(file_c2s_c2s_proto_rawDescData)
+func file_protobuf_protofiles_c2s_proto_rawDescGZIP() []byte {
+	file_protobuf_protofiles_c2s_proto_rawDescOnce.Do(func() {
+		file_protobuf_protofiles_c2s_proto_rawDescData = protoimpl.X.CompressGZIP(file_protobuf_protofiles_c2s_proto_rawDescData)
 	})
-	return file_c2s_c2s_proto_rawDescData
+	return file_protobuf_protofiles_c2s_proto_rawDescData
 }
 
-var file_c2s_c2s_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_c2s_c2s_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
-var file_c2s_c2s_proto_goTypes = []interface{}{
+var file_protobuf_protofiles_c2s_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
+var file_protobuf_protofiles_c2s_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_protobuf_protofiles_c2s_proto_goTypes = []interface{}{
 	(MessageCmd)(0),      // 0: c2s.MessageCmd
 	(ErrorCode)(0),       // 1: c2s.ErrorCode
 	(*Result)(nil),       // 2: c2s.Result
@@ -688,7 +687,7 @@ var file_c2s_c2s_proto_goTypes = []interface{}{
 	(*FrameResp)(nil),    // 8: c2s.FrameResp
 	(*FramesNotify)(nil), // 9: c2s.FramesNotify
 }
-var file_c2s_c2s_proto_depIdxs = []int32{
+var file_protobuf_protofiles_c2s_proto_depIdxs = []int32{
 	2, // 0: c2s.JoinRoomResp.result:type_name -> c2s.Result
 	6, // 1: c2s.JoinRoomResp.frame:type_name -> c2s.Frame
 	5, // 2: c2s.Frame.cmds:type_name -> c2s.Cmd
@@ -702,13 +701,13 @@ var file_c2s_c2s_proto_depIdxs = []int32{
 	0, // [0:6] is the sub-list for field type_name
 }
 
-func init() { file_c2s_c2s_proto_init() }
-func file_c2s_c2s_proto_init() {
-	if File_c2s_c2s_proto != nil {
+func init() { file_protobuf_protofiles_c2s_proto_init() }
+func file_protobuf_protofiles_c2s_proto_init() {
+	if File_protobuf_protofiles_c2s_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_c2s_c2s_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_protobuf_protofiles_c2s_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Result); i {
 			case 0:
 				return &v.state
@@ -720,7 +719,7 @@ func file_c2s_c2s_proto_init() {
 				return nil
 			}
 		}
-		file_c2s_c2s_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_protobuf_protofiles_c2s_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*JoinRoomReq); i {
 			case 0:
 				return &v.state
@@ -732,7 +731,7 @@ func file_c2s_c2s_proto_init() {
 				return nil
 			}
 		}
-		file_c2s_c2s_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_protobuf_protofiles_c2s_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*JoinRoomResp); i {
 			case 0:
 				return &v.state
@@ -744,7 +743,7 @@ func file_c2s_c2s_proto_init() {
 				return nil
 			}
 		}
-		file_c2s_c2s_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_protobuf_protofiles_c2s_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Cmd); i {
 			case 0:
 				return &v.state
@@ -756,7 +755,7 @@ func file_c2s_c2s_proto_init() {
 				return nil
 			}
 		}
-		file_c2s_c2s_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_protobuf_protofiles_c2s_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Frame); i {
 			case 0:
 				return &v.state
@@ -768,7 +767,7 @@ func file_c2s_c2s_proto_init() {
 				return nil
 			}
 		}
-		file_c2s_c2s_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_protobuf_protofiles_c2s_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*FrameReq); i {
 			case 0:
 				return &v.state
@@ -780,7 +779,7 @@ func file_c2s_c2s_proto_init() {
 				return nil
 			}
 		}
-		file_c2s_c2s_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_protobuf_protofiles_c2s_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*FrameResp); i {
 			case 0:
 				return &v.state
@@ -792,7 +791,7 @@ func file_c2s_c2s_proto_init() {
 				return nil
 			}
 		}
-		file_c2s_c2s_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_protobuf_protofiles_c2s_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*FramesNotify); i {
 			case 0:
 				return &v.state
@@ -809,19 +808,19 @@ func file_c2s_c2s_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_c2s_c2s_proto_rawDesc,
+			RawDescriptor: file_protobuf_protofiles_c2s_proto_rawDesc,
 			NumEnums:      2,
 			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_c2s_c2s_proto_goTypes,
-		DependencyIndexes: file_c2s_c2s_proto_depIdxs,
-		EnumInfos:         file_c2s_c2s_proto_enumTypes,
-		MessageInfos:      file_c2s_c2s_proto_msgTypes,
+		GoTypes:           file_protobuf_protofiles_c2s_proto_goTypes,
+		DependencyIndexes: file_protobuf_protofiles_c2s_proto_depIdxs,
+		EnumInfos:         file_protobuf_protofiles_c2s_proto_enumTypes,
+		MessageInfos:      file_protobuf_protofiles_c2s_proto_msgTypes,
 	}.Build()
-	File_c2s_c2s_proto = out.File
-	file_c2s_c2s_proto_rawDesc = nil
-	file_c2s_c2s_proto_goTypes = nil
-	file_c2s_c2s_proto_depIdxs = nil
+	File_protobuf_protofiles_c2s_proto = out.File
+	file_protobuf_protofiles_c2s_proto_rawDesc = nil
+	file_protobuf_protofiles_c2s_proto_goTypes = nil
+	file_protobuf_protofiles_c2s_proto_depIdxs = nil
 }

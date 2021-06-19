@@ -39,7 +39,7 @@ module.exports = {
 	 * */
 	libType: undefined,
 	/**pbjs库输出文件夹,concatPbjsLib为false时有效，不填就不输出 */
-	pbjsLibDir: "client/bin/libs",
+	pbjsLibDir: "client/",
 	/**输出protojs文件类型  0 全部（js和.min.js）1(js) 2(.min.js)*/
 	outputFileType: 1,
 	/**.proto 文件夹路径  */
@@ -47,9 +47,9 @@ module.exports = {
 	/**输出js文件名 */
 	outFileName: "protozbundle",
 	/**生成js的输出路径 */
-	outputDir: "client/protojs",
+	outputDir: "client/",
 	/**声明文件输出路径 */
-	dtsOutDir: "client/libs",
+	dtsOutDir: "client/",
 	/**是否使用压缩库，默认false */
 	isUseMinLib: false,
 	/**服务端输出配置 */
