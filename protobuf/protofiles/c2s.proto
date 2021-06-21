@@ -23,18 +23,26 @@ message Result {
 }
 
 message JoinRoomReq{
-  string uid = 1;
+  uint64 uid = 1;
+  int32  roomID = 2;
 }
 
 
 message JoinRoomResp {
   Result result = 1;
-  string uid = 2;
+  uint64 uid = 2;
   int32 index = 3;//分配的内房间索引
   int32 seed = 4; //种子
   int32 frameIndex = 5; //当前frame
   repeated Frame frame = 6;
 
+}
+message LeaveRoomReq {
+  uint64 uid = 1;
+  int32 roomID = 2;
+}
+message LeaveRoomResp {
+  Result result =1;
 }
 
 message Cmd {
@@ -44,7 +52,7 @@ message Cmd {
 }
 message Frame {
   int32 frameIndex= 1;
-  string uid = 2;
+  uint64 uid = 2;
   int32 index = 3;//分配的房间内索引
   repeated Cmd cmds = 4;
 }
