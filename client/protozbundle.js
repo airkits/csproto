@@ -1425,7 +1425,7 @@ $root.c2s = (function() {
          * @memberof c2s
          * @interface IFrameResp
          * @property {c2s.IResult|null} [result] FrameResp result
-         * @property {string|null} [uid] FrameResp uid
+         * @property {number|Long|null} [uid] FrameResp uid
          * @property {number|null} [frameIndex] FrameResp frameIndex
          */
 
@@ -1454,11 +1454,11 @@ $root.c2s = (function() {
 
         /**
          * FrameResp uid.
-         * @member {string} uid
+         * @member {number|Long} uid
          * @memberof c2s.FrameResp
          * @instance
          */
-        FrameResp.prototype.uid = "";
+        FrameResp.prototype.uid = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
 
         /**
          * FrameResp frameIndex.
@@ -1495,7 +1495,7 @@ $root.c2s = (function() {
             if (message.result != null && message.hasOwnProperty("result"))
                 $root.c2s.Result.encode(message.result, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             if (message.uid != null && message.hasOwnProperty("uid"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.uid);
+                writer.uint32(/* id 2, wireType 0 =*/16).uint64(message.uid);
             if (message.frameIndex != null && message.hasOwnProperty("frameIndex"))
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.frameIndex);
             return writer;
@@ -1536,7 +1536,7 @@ $root.c2s = (function() {
                     message.result = $root.c2s.Result.decode(reader, reader.uint32());
                     break;
                 case 2:
-                    message.uid = reader.string();
+                    message.uid = reader.uint64();
                     break;
                 case 3:
                     message.frameIndex = reader.int32();
@@ -1582,8 +1582,8 @@ $root.c2s = (function() {
                     return "result." + error;
             }
             if (message.uid != null && message.hasOwnProperty("uid"))
-                if (!$util.isString(message.uid))
-                    return "uid: string expected";
+                if (!$util.isInteger(message.uid) && !(message.uid && $util.isInteger(message.uid.low) && $util.isInteger(message.uid.high)))
+                    return "uid: integer|Long expected";
             if (message.frameIndex != null && message.hasOwnProperty("frameIndex"))
                 if (!$util.isInteger(message.frameIndex))
                     return "frameIndex: integer expected";

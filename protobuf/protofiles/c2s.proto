@@ -61,7 +61,7 @@ message FrameReq {
 }
 message FrameResp {
   Result result = 1;
-  string uid = 2;
+  uint64 uid = 2;
   int32 frameIndex = 3;
 }
 

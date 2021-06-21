@@ -657,7 +657,7 @@ declare namespace c2s {
         result?: (c2s.IResult|null);
 
         /** FrameResp uid */
-        uid?: (string|null);
+        uid?: (number|Long|null);
 
         /** FrameResp frameIndex */
         frameIndex?: (number|null);
@@ -676,7 +676,7 @@ declare namespace c2s {
         public result?: (c2s.IResult|null);
 
         /** FrameResp uid. */
-        public uid: string;
+        public uid: (number|Long);
 
         /** FrameResp frameIndex. */
         public frameIndex: number;
