@@ -1275,7 +1275,7 @@ $root.c2s = (function() {
          * Properties of a FrameReq.
          * @memberof c2s
          * @interface IFrameReq
-         * @property {Array.<c2s.IFrame>|null} [frame] FrameReq frame
+         * @property {c2s.IFrame|null} [frame] FrameReq frame
          */
 
         /**
@@ -1287,7 +1287,6 @@ $root.c2s = (function() {
          * @param {c2s.IFrameReq=} [properties] Properties to set
          */
         function FrameReq(properties) {
-            this.frame = [];
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -1296,11 +1295,11 @@ $root.c2s = (function() {
 
         /**
          * FrameReq frame.
-         * @member {Array.<c2s.IFrame>} frame
+         * @member {c2s.IFrame|null|undefined} frame
          * @memberof c2s.FrameReq
          * @instance
          */
-        FrameReq.prototype.frame = $util.emptyArray;
+        FrameReq.prototype.frame = null;
 
         /**
          * Creates a new FrameReq instance using the specified properties.
@@ -1326,9 +1325,8 @@ $root.c2s = (function() {
         FrameReq.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.frame != null && message.frame.length)
-                for (var i = 0; i < message.frame.length; ++i)
-                    $root.c2s.Frame.encode(message.frame[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+            if (message.frame != null && message.hasOwnProperty("frame"))
+                $root.c2s.Frame.encode(message.frame, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             return writer;
         };
 
@@ -1364,9 +1362,7 @@ $root.c2s = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
-                    if (!(message.frame && message.frame.length))
-                        message.frame = [];
-                    message.frame.push($root.c2s.Frame.decode(reader, reader.uint32()));
+                    message.frame = $root.c2s.Frame.decode(reader, reader.uint32());
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -1404,13 +1400,9 @@ $root.c2s = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.frame != null && message.hasOwnProperty("frame")) {
-                if (!Array.isArray(message.frame))
-                    return "frame: array expected";
-                for (var i = 0; i < message.frame.length; ++i) {
-                    var error = $root.c2s.Frame.verify(message.frame[i]);
-                    if (error)
-                        return "frame." + error;
-                }
+                var error = $root.c2s.Frame.verify(message.frame);
+                if (error)
+                    return "frame." + error;
             }
             return null;
         };

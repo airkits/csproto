@@ -585,7 +585,7 @@ declare namespace c2s {
     interface IFrameReq {
 
         /** FrameReq frame */
-        frame?: (c2s.IFrame[]|null);
+        frame?: (c2s.IFrame|null);
     }
 
     /** Represents a FrameReq. */
@@ -598,7 +598,7 @@ declare namespace c2s {
         constructor(properties?: c2s.IFrameReq);
 
         /** FrameReq frame. */
-        public frame: c2s.IFrame[];
+        public frame?: (c2s.IFrame|null);
 
         /**
          * Creates a new FrameReq instance using the specified properties.

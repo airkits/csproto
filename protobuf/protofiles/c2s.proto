@@ -57,7 +57,7 @@ message Frame {
   repeated Cmd cmds = 4;
 }
 message FrameReq {
-  repeated Frame frame = 1;
+  Frame frame = 1;
 }
 message FrameResp {
   Result result = 1;
