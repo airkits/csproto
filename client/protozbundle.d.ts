@@ -584,6 +584,9 @@ declare namespace c2s {
     /** Properties of a FrameReq. */
     interface IFrameReq {
 
+        /** FrameReq roomID */
+        roomID?: (number|null);
+
         /** FrameReq frame */
         frame?: (c2s.IFrame|null);
     }
@@ -596,6 +599,9 @@ declare namespace c2s {
          * @param [properties] Properties to set
          */
         constructor(properties?: c2s.IFrameReq);
+
+        /** FrameReq roomID. */
+        public roomID: number;
 
         /** FrameReq frame. */
         public frame?: (c2s.IFrame|null);

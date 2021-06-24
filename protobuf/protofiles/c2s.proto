@@ -57,7 +57,8 @@ message Frame {
   repeated Cmd cmds = 4;
 }
 message FrameReq {
-  Frame frame = 1;
+  int32 roomID = 1;
+  Frame frame = 2;
 }
 message FrameResp {
   Result result = 1;

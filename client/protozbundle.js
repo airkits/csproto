@@ -1275,6 +1275,7 @@ $root.c2s = (function() {
          * Properties of a FrameReq.
          * @memberof c2s
          * @interface IFrameReq
+         * @property {number|null} [roomID] FrameReq roomID
          * @property {c2s.IFrame|null} [frame] FrameReq frame
          */
 
@@ -1292,6 +1293,14 @@ $root.c2s = (function() {
                     if (properties[keys[i]] != null)
                         this[keys[i]] = properties[keys[i]];
         }
+
+        /**
+         * FrameReq roomID.
+         * @member {number} roomID
+         * @memberof c2s.FrameReq
+         * @instance
+         */
+        FrameReq.prototype.roomID = 0;
 
         /**
          * FrameReq frame.
@@ -1325,8 +1334,10 @@ $root.c2s = (function() {
         FrameReq.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
+            if (message.roomID != null && message.hasOwnProperty("roomID"))
+                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.roomID);
             if (message.frame != null && message.hasOwnProperty("frame"))
-                $root.c2s.Frame.encode(message.frame, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                $root.c2s.Frame.encode(message.frame, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
             return writer;
         };
 
@@ -1362,6 +1373,9 @@ $root.c2s = (function() {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1:
+                    message.roomID = reader.int32();
+                    break;
+                case 2:
                     message.frame = $root.c2s.Frame.decode(reader, reader.uint32());
                     break;
                 default:
@@ -1399,6 +1413,9 @@ $root.c2s = (function() {
         FrameReq.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
+            if (message.roomID != null && message.hasOwnProperty("roomID"))
+                if (!$util.isInteger(message.roomID))
+                    return "roomID: integer expected";
             if (message.frame != null && message.hasOwnProperty("frame")) {
                 var error = $root.c2s.Frame.verify(message.frame);
                 if (error)
