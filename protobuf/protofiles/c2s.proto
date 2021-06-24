@@ -34,7 +34,8 @@ message JoinRoomResp {
   int32 index = 3;//分配的内房间索引
   int32 seed = 4; //种子
   int32 frameIndex = 5; //当前frame
-  repeated Frame frame = 6;
+  int32 roomID = 6;
+  repeated Frame frame = 7;
 
 }
 message LeaveRoomReq {

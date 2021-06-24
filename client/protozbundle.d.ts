@@ -188,6 +188,9 @@ declare namespace c2s {
         /** JoinRoomResp frameIndex */
         frameIndex?: (number|null);
 
+        /** JoinRoomResp roomID */
+        roomID?: (number|null);
+
         /** JoinRoomResp frame */
         frame?: (c2s.IFrame[]|null);
     }
@@ -215,6 +218,9 @@ declare namespace c2s {
 
         /** JoinRoomResp frameIndex. */
         public frameIndex: number;
+
+        /** JoinRoomResp roomID. */
+        public roomID: number;
 
         /** JoinRoomResp frame. */
         public frame: c2s.IFrame[];

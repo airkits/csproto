@@ -374,6 +374,7 @@ $root.c2s = (function() {
          * @property {number|null} [index] JoinRoomResp index
          * @property {number|null} [seed] JoinRoomResp seed
          * @property {number|null} [frameIndex] JoinRoomResp frameIndex
+         * @property {number|null} [roomID] JoinRoomResp roomID
          * @property {Array.<c2s.IFrame>|null} [frame] JoinRoomResp frame
          */
 
@@ -434,6 +435,14 @@ $root.c2s = (function() {
         JoinRoomResp.prototype.frameIndex = 0;
 
         /**
+         * JoinRoomResp roomID.
+         * @member {number} roomID
+         * @memberof c2s.JoinRoomResp
+         * @instance
+         */
+        JoinRoomResp.prototype.roomID = 0;
+
+        /**
          * JoinRoomResp frame.
          * @member {Array.<c2s.IFrame>} frame
          * @memberof c2s.JoinRoomResp
@@ -475,9 +484,11 @@ $root.c2s = (function() {
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.seed);
             if (message.frameIndex != null && message.hasOwnProperty("frameIndex"))
                 writer.uint32(/* id 5, wireType 0 =*/40).int32(message.frameIndex);
+            if (message.roomID != null && message.hasOwnProperty("roomID"))
+                writer.uint32(/* id 6, wireType 0 =*/48).int32(message.roomID);
             if (message.frame != null && message.frame.length)
                 for (var i = 0; i < message.frame.length; ++i)
-                    $root.c2s.Frame.encode(message.frame[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                    $root.c2s.Frame.encode(message.frame[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
             return writer;
         };
 
@@ -528,6 +539,9 @@ $root.c2s = (function() {
                     message.frameIndex = reader.int32();
                     break;
                 case 6:
+                    message.roomID = reader.int32();
+                    break;
+                case 7:
                     if (!(message.frame && message.frame.length))
                         message.frame = [];
                     message.frame.push($root.c2s.Frame.decode(reader, reader.uint32()));
@@ -584,6 +598,9 @@ $root.c2s = (function() {
             if (message.frameIndex != null && message.hasOwnProperty("frameIndex"))
                 if (!$util.isInteger(message.frameIndex))
                     return "frameIndex: integer expected";
+            if (message.roomID != null && message.hasOwnProperty("roomID"))
+                if (!$util.isInteger(message.roomID))
+                    return "roomID: integer expected";
             if (message.frame != null && message.hasOwnProperty("frame")) {
                 if (!Array.isArray(message.frame))
                     return "frame: array expected";
