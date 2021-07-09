@@ -68,6 +68,7 @@ message FrameResp {
 }
 
 message FramesNotify {
-  repeated Frame frame = 1;
+  int32 nextFrame = 1;
+  repeated Frame frame = 2;
 }
 
